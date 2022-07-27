@@ -14,7 +14,7 @@ interface ContainerProps {
   ["p-bottom"]?: number;
 }
 
-export const Container = (props: ContainerProps) => {
+export const Container: React.FC<ContainerProps> = (props) => {
   const { children } = props;
 
   return <SectionContainer {...props}>{children}</SectionContainer>;

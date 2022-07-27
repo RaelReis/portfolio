@@ -85,7 +85,8 @@ const Brand = styled.img`
 `;
 
 const Nav = styled.nav`
-  margin-right: auto;
+  margin-left: auto;
+  margin-right: 50px;
 `;
 
 const NavItem = styled.span`

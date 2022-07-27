@@ -1,7 +1,7 @@
 import { Banner } from "./components/Banner";
 import { MainNavBar } from "./components/MainNavBar";
-import { Projects } from "./components/Projects";
 import { Skills } from "./components/Skills";
+import { Projects } from "./components/ProjectsSection/Projects";
 
 function App() {
   return (
