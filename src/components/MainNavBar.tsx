@@ -1,23 +1,25 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import logo from "../../assets/img/logo.svg";
-import navIcon1 from "../../assets/img/nav-icon1.svg";
-import navIcon2 from "../../assets/img/nav-icon2.svg";
-import navIcon3 from "../../assets/img/nav-icon3.svg";
+import { Container } from "./UI/Container";
+
+import logo from "../assets/img/logo.svg";
+import navIcon1 from "../assets/img/nav-icon1.svg";
+import navIcon2 from "../assets/img/nav-icon2.svg";
+import navIcon3 from "../assets/img/nav-icon3.svg";
 
 interface NavBarProps {
   scrolled: boolean;
 }
 
-function MainNavBar() {
+export const MainNavBar = () => {
   const [activeLink, setActiveLink] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
       if (window.scrollY > 50) {
-        console.log('vapo')
+        console.log("vapo");
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -26,7 +28,7 @@ function MainNavBar() {
 
     window.addEventListener("scroll", onScroll);
 
-    return () =>  window.removeEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   const handleActiveLink = (value: string) => {
@@ -35,7 +37,7 @@ function MainNavBar() {
 
   return (
     <NavBar scrolled={scrolled}>
-      <Container>
+      <Container flex align-center>
         <NavBarBrand>
           <Brand src={logo} alt="Logo" />
         </NavBarBrand>
@@ -58,9 +60,7 @@ function MainNavBar() {
       </Container>
     </NavBar>
   );
-}
-
-export default MainNavBar;
+};
 
 const NavBar = styled.div<NavBarProps>`
   padding: ${(props) => (props.scrolled ? "0px 0" : "")};
@@ -74,15 +74,8 @@ const NavBar = styled.div<NavBarProps>`
 
   position: fixed;
   z-index: 99;
-`;
 
-const Container = styled.div`
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  padding: 0 300px;
+  transition: all 0.3s ease;
 `;
 
 const NavBarBrand = styled.div``;
