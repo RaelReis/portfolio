@@ -56,32 +56,30 @@ export const Projects = () => {
   };
 
   return (
-    <Background>
-      <Container flex flex-d-column p-bottom={80} p-top={80}>
-        <TextArea>
-          <Title>Projects</Title>
-          <Description>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.
-          </Description>
-        </TextArea>
-        <ProjectsNavBar>
-          <NavItem activeItem={selectedList === numbData.tab1} onClick={() => handleSelectTab(numbData.tab1)}>
-            Tab 1
-          </NavItem>
-          <NavItem activeItem={selectedList === numbData.tab2} onClick={() => handleSelectTab(numbData.tab2)}>
-            Tab 2
-          </NavItem>
-          <NavItem activeItem={selectedList === numbData.tab3} onClick={() => handleSelectTab(numbData.tab3)}>
-            Tab 3
-          </NavItem>
-        </ProjectsNavBar>
-        <ProjectList>
-          {selectedList.length > 0 ? selectedList.map((data) => <ProjectCard data={data} />) : <span>alho</span>}
-        </ProjectList>
-      </Container>
-    </Background>
+    <Container flex flex-d-column p-bottom={80} p-top={80} bgColor="#000">
+      <TextArea>
+        <Title>Projects</Title>
+        <Description>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make a type specimen book.
+        </Description>
+      </TextArea>
+      <ProjectsNavBar>
+        <NavItem activeItem={selectedList === numbData.tab1} onClick={() => handleSelectTab(numbData.tab1)}>
+          Tab 1
+        </NavItem>
+        <NavItem activeItem={selectedList === numbData.tab2} onClick={() => handleSelectTab(numbData.tab2)}>
+          Tab 2
+        </NavItem>
+        <NavItem activeItem={selectedList === numbData.tab3} onClick={() => handleSelectTab(numbData.tab3)}>
+          Tab 3
+        </NavItem>
+      </ProjectsNavBar>
+      <ProjectList>
+        {selectedList.length > 0 ? selectedList.map((data) => <ProjectCard data={data} />) : <span>alho</span>}
+      </ProjectList>
+    </Container>
   );
 };
 
@@ -149,6 +147,6 @@ const NavItem = styled.div<NavItemProps>`
 const ProjectList = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
 `;

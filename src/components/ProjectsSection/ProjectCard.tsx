@@ -21,7 +21,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
 };
 
 const Card = styled.div`
-  max-width: 400px;
+  max-width: 435px;
   position: relative;
   border-radius: 50px;
   margin: 15px;
@@ -29,10 +29,14 @@ const Card = styled.div`
   cursor: pointer;
 
   @media (max-width: 1500px) {
-    max-width: 350px;
+    max-width: 365px;
   }
   @media (max-width: 1250px) {
-    max-width: 300px;
+    max-width: 460px;
+  }
+
+  @media (max-width: 1050px) {
+    max-width: 365px;
   }
 `;
 

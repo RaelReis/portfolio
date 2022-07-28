@@ -3,7 +3,8 @@ import styled from "styled-components";
 
 interface BackgroundProps {
   children: React.ReactNode;
-  bg?: string;
+  bgImage?: string;
+  bgColor?: string;
 }
 
 export const Background: React.FC<BackgroundProps> = (props) => {
@@ -11,7 +12,11 @@ export const Background: React.FC<BackgroundProps> = (props) => {
 };
 
 const Bg = styled.div<BackgroundProps>`
-  ${(props) => (props.bg ? `background: url(${props.bg})` : "background: #000")};
+  width: 100%;
+
+  ${(props) => (props.bgImage ? `background: url(${props.bgImage})` : "")}
+  ${(props) => (props.bgColor ? `background: ${props.bgColor}` : "")};
+
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;

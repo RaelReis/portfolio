@@ -173,7 +173,7 @@ const LeftButton = styled.button<CarouselButtonProps>`
   border: none;
   cursor: pointer;
   margin: 0 10px;
-  z-index: 99;
+  z-index: 2;
 `;
 const RightButton = styled.button<CarouselButtonProps>`
   position: absolute;
@@ -192,7 +192,7 @@ const RightButton = styled.button<CarouselButtonProps>`
   border: none;
   cursor: pointer;
   margin: 0 10px;
-  z-index: 99;
+  z-index: 2;
 `;
 
 const Background = styled.img`
@@ -201,7 +201,6 @@ const Background = styled.img`
   width: 30%;
   left: 0;
   top: 30%;
-  transform: translateY(50%);
 
   z-index: -1;
 `;

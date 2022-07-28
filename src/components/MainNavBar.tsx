@@ -2,11 +2,8 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 import { Container } from "./UI/Container";
-
-import logo from "../assets/img/logo.svg";
-import navIcon1 from "../assets/img/nav-icon1.svg";
-import navIcon2 from "../assets/img/nav-icon2.svg";
-import navIcon3 from "../assets/img/nav-icon3.svg";
+import { Logo } from "./UI/Logo";
+import { SocialArea } from "./UI/SocialArea";
 
 interface NavBarProps {
   scrolled: boolean;
@@ -37,26 +34,16 @@ export const MainNavBar = () => {
 
   return (
     <NavBar scrolled={scrolled}>
-      <Container flex align-center>
+      <Container flex align-center justify-center>
         <NavBarBrand>
-          <Brand src={logo} alt="Logo" />
+          <Logo />
         </NavBarBrand>
         <Nav>
           <NavItem>Home</NavItem>
           <NavItem>Skills</NavItem>
           <NavItem>Projects</NavItem>
         </Nav>
-        <SocialBox>
-          <SocialLink>
-            <SocialImg src={navIcon1} alt="" />
-          </SocialLink>
-          <SocialLink>
-            <SocialImg src={navIcon2} alt="" />
-          </SocialLink>
-          <SocialLink>
-            <SocialImg src={navIcon3} alt="" />
-          </SocialLink>
-        </SocialBox>
+        <SocialArea />
       </Container>
     </NavBar>
   );
@@ -65,8 +52,11 @@ export const MainNavBar = () => {
 const NavBar = styled.div<NavBarProps>`
   padding: ${(props) => (props.scrolled ? "0px 0" : "")};
   background-color: ${(props) => (props.scrolled ? "#121212" : "")};
-  height: 100px;
+
+  height: ${(props) => (props.scrolled ? "70px" : "100px")};
   width: 100%;
+
+  margin: 0 auto;
 
   display: flex;
   align-items: center;
@@ -79,10 +69,6 @@ const NavBar = styled.div<NavBarProps>`
 `;
 
 const NavBarBrand = styled.div``;
-
-const Brand = styled.img`
-  width: 80%;
-`;
 
 const Nav = styled.nav`
   margin-left: auto;
@@ -101,34 +87,3 @@ const NavItem = styled.span`
     opacity: 1;
   }
 `;
-
-const SocialBox = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const SocialLink = styled.a`
-  margin: 0 5px;
-  width: 50px;
-  height: 50px;
-
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  background-color: rgba(217, 217, 217, 0.1);
-
-  text-decoration: none;
-  color: inherit;
-  border-radius: 50%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  transition: all 0.2s ease;
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(110%);
-  }
-`;
-
-const SocialImg = styled.img``;

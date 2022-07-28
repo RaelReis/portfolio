@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { Background } from "./Background";
 
 interface ContainerProps {
   children: React.ReactNode;
-  bg?: string;
+  bgColor?: string;
+  bgImage?: string;
   full?: boolean;
   flex?: boolean;
   ["flex-d-column"]?: boolean;
@@ -17,7 +19,11 @@ interface ContainerProps {
 export const Container: React.FC<ContainerProps> = (props) => {
   const { children } = props;
 
-  return <SectionContainer {...props}>{children}</SectionContainer>;
+  return (
+    <Background bgImage={props.bgImage} bgColor={props.bgColor}>
+      <SectionContainer {...props}>{children}</SectionContainer>
+    </Background>
+  );
 };
 
 const SectionContainer = styled.div<ContainerProps>`
@@ -26,7 +32,6 @@ const SectionContainer = styled.div<ContainerProps>`
 
   margin: 0 auto;
 
-  ${(props) => (props.bg ? `background: url(${props.bg})` : "")};
   ${(props) => (props.flex ? "display: flex" : "")};
   ${(props) => (props["flex-d-column"] ? "flex-direction: column" : "")};
   ${(props) => (props["p-top"] ? `padding-top: ${props["p-top"]}px ` : "")};

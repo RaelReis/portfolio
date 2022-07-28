@@ -50,24 +50,22 @@ export const Banner = () => {
   };
 
   return (
-    <Background bg={bannerBg}>
-      <Container flex p-top={260} p-bottom={100}>
-        <TextBox>
-          <TagLine>Welcome to my Portfolio</TagLine>
-          <H1>
-            Hi! I'm Kelon <Text dataPeriod="1000">{text}</Text>
-          </H1>
-          <Description>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book.
-          </Description>
-        </TextBox>
-        <ImgBox>
-          <BannerImg src={bannerImg} alt="Header image" />
-        </ImgBox>
-      </Container>
-    </Background>
+    <Container flex p-top={260} p-bottom={100} bgImage={bannerBg}>
+      <TextBox>
+        <TagLine>Welcome to my Portfolio</TagLine>
+        <H1>
+          Hi! I'm Kelon <Text dataPeriod="1000">{text}</Text>
+        </H1>
+        <Description>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
+          make a type specimen book.
+        </Description>
+      </TextBox>
+      <ImgBox>
+        <BannerImg src={bannerImg} alt="Header image" />
+      </ImgBox>
+    </Container>
   );
 };
 
