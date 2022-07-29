@@ -51,7 +51,7 @@ export const Skills = () => {
   };
 
   return (
-    <Container>
+    <Container id="skills">
       <SkillSection>
         <Title>Skills</Title>
         <Description>

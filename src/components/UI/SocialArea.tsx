@@ -34,8 +34,6 @@ const SocialLink = styled.a`
   border: 1px solid rgba(255, 255, 255, 0.5);
   background-color: rgba(217, 217, 217, 0.1);
 
-  text-decoration: none;
-  color: inherit;
   border-radius: 50%;
 
   display: flex;

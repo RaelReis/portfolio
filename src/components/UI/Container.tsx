@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { BREAKPOINTS } from "../../assets/style/breakpoints";
 import { Background } from "./Background";
 
 interface ContainerProps {
   children: React.ReactNode;
+  id?: string;
   bgColor?: string;
   bgImage?: string;
   full?: boolean;
@@ -41,13 +43,13 @@ const SectionContainer = styled.div<ContainerProps>`
   ${(props) => (props["align-center"] ? "align-items: center" : "")};
   ${(props) => (props["justify-center"] ? "justify-content: center" : "")};
 
-  @media (max-width: 1500px) {
+  @media (${BREAKPOINTS.large}) {
     max-width: 1200px;
   }
-  @media (max-width: 1250px) {
+  @media (${BREAKPOINTS.big}) {
     max-width: 1000px;
   }
-  @media (max-width: 1050px) {
+  @media (${BREAKPOINTS.medium}) {
     max-width: 800px;
   }
 `;

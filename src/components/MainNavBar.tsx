@@ -39,9 +39,10 @@ export const MainNavBar = () => {
           <Logo />
         </NavBarBrand>
         <Nav>
-          <NavItem>Home</NavItem>
-          <NavItem>Skills</NavItem>
-          <NavItem>Projects</NavItem>
+          <NavItem href="#home">Home</NavItem>
+          <NavItem href="#skills">Skills</NavItem>
+          <NavItem href="#projects">Projects</NavItem>
+          <NavItem href="#contact">Contact</NavItem>
         </Nav>
         <SocialArea />
       </Container>
@@ -75,7 +76,8 @@ const Nav = styled.nav`
   margin-right: 50px;
 `;
 
-const NavItem = styled.span`
+const NavItem = styled.a`
+  color: inherit;
   font-size: 18px;
   padding: 0 20px;
   margin: 0 10px;

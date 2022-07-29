@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 
 import { Container } from "./UI/Container";
-import { Background } from "./UI/Background";
 
 import bannerBg from "../assets/img/banner-bg.png";
 import bannerImg from "../assets/img/header-img.svg";
@@ -50,7 +49,7 @@ export const Banner = () => {
   };
 
   return (
-    <Container flex p-top={260} p-bottom={100} bgImage={bannerBg}>
+    <Container id="home" flex p-top={260} p-bottom={100} bgImage={bannerBg}>
       <TextBox>
         <TagLine>Welcome to my Portfolio</TagLine>
         <H1>

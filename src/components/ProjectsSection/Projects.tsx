@@ -56,7 +56,7 @@ export const Projects = () => {
   };
 
   return (
-    <Container flex flex-d-column p-bottom={80} p-top={80} bgColor="#000">
+    <Container flex flex-d-column p-bottom={80} p-top={80} bgColor="#000" id="projects">
       <TextArea>
         <Title>Projects</Title>
         <Description>

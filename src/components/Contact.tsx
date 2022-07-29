@@ -1,10 +1,17 @@
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
+
 import { Container } from "./UI/Container";
 import { Input } from "./UI/Input";
 
-import rocket from "../assets/img/rocket.png";
-import rocket2 from "../assets/img/rocket2.png";
+import { BREAKPOINTS } from "../assets/style/breakpoints";
+import rocket2 from "../assets/img/teste2.png";
+import locationIcon from "../assets/img/location_icon.svg";
+import phoneIcon from "../assets/img/phone_icon.svg";
+import emailIcon from "../assets/img/email_icon.svg";
+import discordIcon from "../assets/img/discord_icon.svg";
+import linkedinIcon from "../assets/img/nav-icon1.svg";
+import githubIcon from "../assets/img/github_icon.svg";
 
 const backgroundColor = "linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%)";
 
@@ -29,11 +36,36 @@ export const Contact = () => {
   };
 
   return (
-    <Container bgColor={backgroundColor}>
+    <Container id="contact" bgColor={backgroundColor}>
       <ContactContainer>
+        <MoreContactsBox>
+          <MoreContactsItem>
+            <MoreContactsItemIcon src={linkedinIcon} alt="Icone do discord" />
+          </MoreContactsItem>
+          <MoreContactsItem>
+            <MoreContactsItemIcon src={discordIcon} alt="Icone do linkedin" />
+          </MoreContactsItem>
+          <MoreContactsItem>
+            <MoreContactsItemIcon src={githubIcon} alt="Icone do gitub" />
+          </MoreContactsItem>
+        </MoreContactsBox>
         <ContactBox>
           <ContactImageBox>
             <ContactImage src={rocket2} alt="Contact Image" />
+            <MyContactArea>
+              <MyContactItem>
+                <ContactIcon src={locationIcon} alt="Icone de mapa" />
+                <ContactText>Vila Santa Catarina, São Paulo - SP</ContactText>
+              </MyContactItem>
+              <MyContactItem>
+                <ContactIcon src={phoneIcon} alt="Icone de telefone" />
+                <ContactText>(11) 9 8512-8393</ContactText>
+              </MyContactItem>
+              <MyContactItem>
+                <ContactIcon src={emailIcon} alt="Icone de email" />
+                <ContactText>raelreiscontato@gmail.com</ContactText>
+              </MyContactItem>
+            </MyContactArea>
           </ContactImageBox>
           <ContactForm onSubmit={handleSubmit}>
             <FormTitle>Get In Touch</FormTitle>
@@ -74,6 +106,8 @@ export const Contact = () => {
   );
 };
 
+// ************* Animations *************
+
 const rainbow = keyframes`
   0% {
     background-position: 0 0;
@@ -86,10 +120,62 @@ const rainbow = keyframes`
   }
 `;
 
+// ************* Styles *************
+
 const ContactContainer = styled.div`
   position: relative;
 
-  height: 70vh;
+  min-height: 670px;
+  margin: 0 90px;
+
+  @media (${BREAKPOINTS.medium}) {
+    min-height: 800px;
+  }
+`;
+
+const MoreContactsBox = styled.ul`
+  padding: 25px 0;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  position: absolute;
+  left: -87px;
+  bottom: 35px;
+
+  width: 90px;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 15px #000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const MoreContactsItem = styled.li`
+  width: 40px;
+  height: 40px;
+
+  margin: 10px 0;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(217, 217, 217, 0.1);
+
+  transition: all 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(110%);
+  }
+`;
+
+const MoreContactsItemIcon = styled.img`
+  text-align: center;
 `;
 
 const ContactBox = styled.div`
@@ -103,19 +189,75 @@ const ContactBox = styled.div`
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 30px #000;
   border-radius: 50px;
-  padding: 45px 80px;
+  padding: 45px 100px;
 
   display: flex;
+
+  @media (${BREAKPOINTS.big}) {
+    padding: 45px 40px;
+  }
+
+  @media (${BREAKPOINTS.medium}) {
+    flex-direction: column;
+  }
 `;
 
 const ContactImageBox = styled.div`
   flex: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (${BREAKPOINTS.medium}) {
+    flex: none;
+  }
 `;
 
-const ContactImage = styled.img``;
+const MyContactArea = styled.ul`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  &::before {
+    content: "";
+    margin-top: auto;
+  }
+
+  &::after {
+    content: "";
+    margin-top: auto;
+  }
+`;
+
+const MyContactItem = styled.li`
+  display: flex;
+  align-items: center;
+
+  margin: 10px 25px;
+  padding: 18px 10px;
+`;
+
+const ContactIcon = styled.img``;
+
+const ContactText = styled.span`
+  color: #b8b8b8;
+  width: 100%;
+  font-size: 18px;
+  margin-left: 30px;
+`;
+
+const ContactImage = styled.img`
+  // display: none;
+  margin: 15px auto 0 60px;
+  width: 50%;
+
+  @media (${BREAKPOINTS.medium}) {
+    width: 20%;
+    margin-left: auto;
+  }
+`;
 
 const ContactForm = styled.form`
   flex: 1;
@@ -129,9 +271,12 @@ const FormTitle = styled.h3`
 `;
 
 const TextArea = styled.textarea`
+  flex: 1;
   font-family: inherit;
   height: 50px;
   margin: 15px 0;
+
+  resize: none;
 
   padding: 15px 20px;
 
@@ -217,7 +362,7 @@ const FormButton = styled.button`
 
 const ButtonSpan = styled.button`
   font-family: inherit;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 20px;
 
   position: absolute;
