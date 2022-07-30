@@ -30,7 +30,6 @@ export const Skills = () => {
     e.preventDefault();
 
     if (carousel.current) {
-      console.log(carousel.current.offsetWidth);
       carousel.current.scrollLeft -= carousel.current.offsetWidth / 3;
     }
   };
@@ -125,7 +124,6 @@ const Description = styled.p`
 const CarouselConainer = styled.div`
   overflow-x: hidden;
   scroll-behavior: smooth;
-  margin: 0 auto;
 
   flex: 1;
   display: flex;
@@ -135,8 +133,7 @@ const CarouselConainer = styled.div`
 const Carousel = styled.div`
   max-width: 690px;
 
-  margin: 0 auto;
-
+  margin-inline: auto;
   position: relative;
 `;
 

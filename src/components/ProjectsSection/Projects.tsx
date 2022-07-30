@@ -1,11 +1,12 @@
 import { useState } from "react";
 import styled from "styled-components";
+import { ProjectData } from "./types";
+
 import { ProjectCard } from "./ProjectCard";
-import { Background } from "../UI/Background";
 import { Container } from "../UI/Container";
 
 import project3 from "../../assets/img/project-img3.png";
-import { ProjectData } from "./types";
+import bdoDiary from '../../assets/img/bdo_diary.png';
 
 const numbData = {
   tab1: [
@@ -15,7 +16,7 @@ const numbData = {
       description: "Teeeestando",
     },
     {
-      img: project3,
+      img: bdoDiary,
       title: "BDO Diary",
       description: "Teeeestando",
     },
@@ -107,10 +108,8 @@ const ProjectsNavBar = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  
   margin-bottom: 40px;
-
-  border-radius: 50px;
 `;
 
 const NavItem = styled.div<NavItemProps>`

@@ -23,10 +23,10 @@ const CONTACT_INITIAL = {
 };
 
 export const Contact = () => {
-  const [contact, setContact] = useState(CONTACT_INITIAL);
+  const [contactForm, setContactForm] = useState(CONTACT_INITIAL);
 
-  const handleInput = (inputText: string, inputName: string) => {
-    setContact((prevContact) => {
+  const handleInput = (inputText: string, inputName: "name" | "email" | "number" | "message") => {
+    setContactForm((prevContact) => {
       return { ...prevContact, [inputName]: inputText };
     });
   };
@@ -71,28 +71,28 @@ export const Contact = () => {
             <FormTitle>Get In Touch</FormTitle>
             <Input
               id="name"
-              value={contact.name}
+              value={contactForm.name}
               placeholder="Name"
               type="text"
               onChange={(text) => handleInput(text.target.value, "name")}
             />
             <Input
               id="email"
-              value={contact.email}
+              value={contactForm.email}
               placeholder="Email Adress"
               type="email"
               onChange={(text) => handleInput(text.target.value, "email")}
             />
             <Input
               id="number"
-              value={contact.number}
+              value={contactForm.number}
               placeholder="Phone No."
               type="text"
               onChange={(text) => handleInput(text.target.value, "number")}
             />
             <TextArea
               id="text-area"
-              value={contact.message}
+              value={contactForm.message}
               placeholder="Message"
               onChange={(text) => handleInput(text.target.value, "message")}
             />
@@ -273,6 +273,7 @@ const FormTitle = styled.h3`
 const TextArea = styled.textarea`
   flex: 1;
   font-family: inherit;
+  font-size: 18px;
   height: 50px;
   margin: 15px 0;
 

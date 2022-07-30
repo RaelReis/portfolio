@@ -22,6 +22,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = (props) => {
 
 const Card = styled.div`
   max-width: 435px;
+  
   position: relative;
   border-radius: 50px;
   margin: 15px;
@@ -42,6 +43,7 @@ const Card = styled.div`
 
 const CardImage = styled.img`
   width: 100%;
+
 `;
 
 const CardTitle = styled.h4`

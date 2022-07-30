@@ -29,10 +29,8 @@ export const Container: React.FC<ContainerProps> = (props) => {
 };
 
 const SectionContainer = styled.div<ContainerProps>`
-  max-width: 1400px;
-  width: 100%;
-
-  margin: 0 auto;
+  width: min(100%, 1400px);
+  margin-inline: auto;
 
   ${(props) => (props.flex ? "display: flex" : "")};
   ${(props) => (props["flex-d-column"] ? "flex-direction: column" : "")};

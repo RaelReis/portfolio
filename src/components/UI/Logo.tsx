@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-import logo from "../../assets/img/logo.svg";
+// import logo from "../../assets/img/logo.svg";
+import logo from "../../assets/img/logo2.png";
 
 interface LogoProps {
-  size?: "small" | "medium" | "big";
+  size?: "small" | "big";
 }
 
 const size = {
-  small: "110px",
-  medium: "160px",
-  big: "200px",
+  small: "50px",
+  big: "120px",
 };
 
 export const Logo: React.FC<LogoProps> = (props) => {

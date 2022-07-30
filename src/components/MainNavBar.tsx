@@ -57,8 +57,6 @@ const NavBar = styled.div<NavBarProps>`
   height: ${(props) => (props.scrolled ? "70px" : "100px")};
   width: 100%;
 
-  margin: 0 auto;
-
   display: flex;
   align-items: center;
   justify-content: center;

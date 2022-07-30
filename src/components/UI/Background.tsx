@@ -18,5 +18,4 @@ const Bg = styled.div<BackgroundProps>`
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
-  z-index: -99;
 `;
